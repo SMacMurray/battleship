@@ -117,6 +117,7 @@ bool test_ships(int **grid){
 
 void game_loop(int **grid, char **front){
 	int x; int y;
+	print_front(front);
 	while (true){
 		scanf("%d %d", &x, &y);
 		if (grid[x][y] == 1){
