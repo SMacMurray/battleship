@@ -83,6 +83,7 @@ bool seed_ships_helper(int **grid, int x, int y, int ship_size, int dir){
 		return false;
 	}
 	return false;
+	//returns true if function ends for some reason?
 }
 
 void seed_ships(int **grid){
@@ -164,3 +165,80 @@ int main(){
 
 
 
+/*
+// WORKS
+void initialize_me_please(int **grid){
+	for (int i = 0; i < N; i++){
+		for (int j = 0; j < N; j++){
+			grid[i][j] = 9;		
+		}
+	}
+}
+
+void print_me_please(int **grid){
+	for (int i = 0; i < N; i++){
+		for (int j = 0; j < N; j++){
+			printf("%d ", grid[i][j]);	
+		}
+		printf("\n");
+	}
+}*/
+
+
+
+/*
+// DOESN"T WORK: MEMORY SPACE CONSISTENTLY OFF
+void initialize_me_alt(int **grid){
+	int **tmp = grid;
+	for (int i = 0; i < N; i++){
+		for (int j = 0; j < N; j++){
+			**tmp = 9;
+			(*tmp)++;
+		}
+		tmp++;
+	}
+}
+
+void print_me_alt(int **grid){
+	int **tmp = grid;
+	for (int i = 0; i < N; i++){
+		for (int j = 0; j < N; j++){
+			printf("%d ", **tmp);
+			(*tmp)++;
+		}
+		printf("\n");
+		tmp++;
+	}
+}
+
+
+
+
+
+
+
+// DOESN'T WORK: CAN'T PASS ARRAY TYPE int **, ONLY ACCEPTS int *[N]
+
+int grid[3][2] = {{1,4},{2,5},{2,8}};
+void initialize_me(int *grid[N]){
+	int (*p1)[N] = grid;
+	int *p2 = NULL;
+	for (; p1 != grid+N; ++p1) {
+	    for (p2 = *p1; p2 != *p1+N; ++p2 ) {
+	        *p2 = 9;
+	    }
+	}
+}
+
+void print_me(int *grid[N]){
+	int (*p1)[N] = grid;
+	int *p2 = NULL;
+	for (; p1 != grid+N; ++p1) {
+	    for (p2 = *p1; p2 != *p1+N; ++p2 ) {
+	        printf("%d\n", *p2);
+	    }
+	}
+}
+
+
+*/
